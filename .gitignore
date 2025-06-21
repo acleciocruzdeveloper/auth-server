@@ -1,6 +1,9 @@
 # Compiled class file
 *.class
 
+# Vs code ignore
+*.vscode
+
 # Log file
 *.log
 
