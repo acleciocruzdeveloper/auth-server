@@ -19,9 +19,10 @@ public class AuthController {
 
     @GetMapping
     @SuppressWarnings("null")
-    ResponseEntity<TokenEntity> getAuthToken(@AuthenticationPrincipal Jwt jwt){
-        LOGGER.info("token gerado {}", jwt.getExpiresAt().toEpochMilli());
+    ResponseEntity<TokenEntity> getAuthToken(@AuthenticationPrincipal Jwt jwt) {
+        LOGGER.info("request token server keycloak");
         TokenEntity tokenEntity = new TokenEntity(jwt.getTokenValue(), jwt.getExpiresAt().toEpochMilli());
+        LOGGER.info("token valid generated");
         return ResponseEntity.ok().body(tokenEntity);
     }
 
